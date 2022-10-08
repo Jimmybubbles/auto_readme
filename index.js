@@ -20,6 +20,7 @@ const questions = ([
                 return true
             } else {
                 console.log('Please enter a name for the project')
+                return false
             }
         }
     },
@@ -36,6 +37,7 @@ const questions = ([
                 return true
             } else {
                 console.log('Please enter a project description')
+                return false
             }
         }
 
@@ -53,6 +55,7 @@ const questions = ([
                 return true
             } else {
                 console.log('please enter a project installation information')
+                return false
             }
         }
 
@@ -70,12 +73,27 @@ const questions = ([
                 return true
             } else {
                 console.log('please enter how to use the project')
+                return false
             }
         }
     },
     
     // section user to choose licenses
+    {
+        type:'input',
+        message: 'input the licenses to use in the project',
+        name: 'licences',
+        choices: ['mit', 'cc', 'apache', 'none'],
 
+        validate: licencesInput => {
+            if(licencesInput){
+                return true
+            }else{
+                console.log('please choose a licence')
+                return false
+            }
+        }
+    },
 
 
 
@@ -91,6 +109,7 @@ const questions = ([
                 return true
             } else {
                 console.log('please enter how people can contribute to the project')
+                return false
             }
         }
     },
@@ -131,7 +150,7 @@ const questions = ([
     },
 
 
-    // section for how to contribute to this project
+    
 
 
 ])

@@ -18,3 +18,37 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+
+const fs = require('fs');
+const { type } = require('os');
+
+function generateLicenceBadge() {
+
+`
+
+## Licences
+
+    https://img.shields.io/badge/${type}-<MESSAGE>-<${color}>
+
+
+`
+
+
+}
+
+// template for the readme to populate to 
+const template = {
+    `
+
+# ${title}
+
+## Description
+${description}
+
+## Table of contents
+
+
+## 
+
+    `
+}
