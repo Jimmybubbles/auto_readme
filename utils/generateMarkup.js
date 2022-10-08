@@ -22,7 +22,7 @@
 const fs = require('fs');
 const { type } = require('os');
 
-function generateLicenceBadge() {
+function generateLicenseBadge() {
 
 
     // choices: ['mit', 'cc', 'apache', 'none'],
@@ -31,24 +31,22 @@ function generateLicenceBadge() {
     if (type === 'CC') color = 'blue';
     if (type === 'Apache') color = 'red';
     if (type === 'None') color = 'orange';
-    
+
     return (
-`
+        `
 
 ## Licences
 
-    https://img.shields.io/badge/${type}-<MESSAGE>-<${color}>
+   <img scr="https://img.shields.io/badge/license${type}-<${color}">
 
 
 `
     );
-
-}
+};
 
 // template for the readme to populate to 
 const template = {
     `
-
 # ${title}
 
 ## Description
@@ -75,5 +73,12 @@ ${Github}
 ## Email
 ${Email}
 
+${generateLicenseBadge(license)}
+
     `
-}
+};
+
+fs.writeFileSync('./output/ReadMe.md', template);
+console.log('generated template');
+process.exit();
+
