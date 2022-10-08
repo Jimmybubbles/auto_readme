@@ -1,0 +1,23 @@
+{
+  "name": "readme_gen",
+  "version": "1.0.0",
+  "description": "create a professional readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jimmybubbles/auto_readme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jimmybubbles/auto_readme/issues"
+  },
+  "homepage": "https://github.com/Jimmybubbles/auto_readme#readme",
+  "type": "module",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
