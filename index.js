@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-//const utils = require('./utils/generateMarkdown');
+const utils = require('./utils/generateMarkup');
 
 // create array of questions
 
@@ -148,6 +148,22 @@ const questions = ([
             }
         }
     },
+
+    {
+        type: 'Input',
+        message: 'enter your email ',
+        name: 'Email',
+
+        validate: emailInput => {
+            if (emailInput) {
+                return true
+            } else {
+                console.log('please enter your email')
+            }
+        }
+    },
+
+
 ]);
 
 inquirer.prompt(questions).then((answers) => {
@@ -156,7 +172,7 @@ inquirer.prompt(questions).then((answers) => {
 
 
 // write to a markdown file
-function writeToFile(fileName, data) {
+function writeToFile(readme, data) {
 
 }
 

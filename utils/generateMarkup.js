@@ -17,7 +17,7 @@
 // `;
 // }
 
-// module.exports = generateMarkdown;
+
 
 const fs = require('fs');
 const { type } = require('os');
@@ -38,15 +38,29 @@ function generateLicenseBadge() {
 ## Licences
 
    <img scr="https://img.shields.io/badge/license${type}-<${color}">
-
-
-`
+    
+   `
     );
 };
 
-// template for the readme to populate to 
-const template = {
-    `
+const generateMarkdown = ({
+    title,
+    description,
+    installation,
+    useProject,
+    licenses,
+    contribute,
+    test,
+    github,
+    email,
+
+}) => {
+
+
+    // template for the readme to populate to 
+    const template = (
+        `
+
 # ${title}
 
 ## Description
@@ -56,29 +70,33 @@ ${description}
 
 
 ## Installation
-${Instillation}
+${installation}
 
 ## Usage
-${Usage}
+${useProject}
 
 ## Contribution
-${Contribution}
+${contribute}
 
 ## Test
-${Test}
+${test}
 
 ## Github
-${Github}
+${github}
 
 ## Email
-${Email}
+${email}
 
-${generateLicenseBadge(license)}
+${generateLicenseBadge(licenses)}
 
-    `
+`
+    );
+
+    fs.writeFileSync('./output/ReadMe.md', template);
+    console.log('generated template');
+    process.exit();
+
 };
 
-fs.writeFileSync('./output/ReadMe.md', template);
-console.log('generated template');
-process.exit();
+    module.exports = generateMarkdown;
 
