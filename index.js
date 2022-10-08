@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const utils = require('./utils/generateMarkdown');
+//const utils = require('./utils/generateMarkdown');
 
 // create array of questions
 
@@ -82,14 +82,14 @@ const questions = ([
     {
         type:'input',
         message: 'input the licenses to use in the project',
-        name: 'licences',
+        name: 'licenses',
         choices: ['mit', 'cc', 'apache', 'none'],
 
-        validate: licencesInput => {
-            if(licencesInput){
+        validate: licensesInput => {
+            if(licensesInput){
                 return true
             }else{
-                console.log('please choose a licence')
+                console.log('please choose a license')
                 return false
             }
         }
@@ -120,7 +120,7 @@ const questions = ([
 
     {
         type: 'Input',
-        message: 'input section for how people can test to the project',
+        message: 'input section for how people can test the project',
         name: 'test',
 
         validate: testInput => {
@@ -148,11 +148,22 @@ const questions = ([
             }
         }
     },
+]);
+
+inquirer.prompt(questions).then((answers) => {
+    console.log(answers);
+});
 
 
-    
+// write to a markdown file
+function writeToFile(fileName, data) {
 
+}
 
-])
+function init(){
+
+}
+
+init()
 
 

@@ -48,7 +48,23 @@ ${description}
 ## Table of contents
 
 
-## 
+## Installation
+${Instillation}
+
+## Usage
+${Usage}
+
+## Contribution
+${Contribution}
+
+## Test
+${Test}
+
+## Github
+${Github}
+
+## Email
+${Email}
 
     `
 }

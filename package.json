@@ -16,8 +16,8 @@
     "url": "https://github.com/Jimmybubbles/auto_readme/issues"
   },
   "homepage": "https://github.com/Jimmybubbles/auto_readme#readme",
-  "type": "module",
+  
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.0.0"
   }
 }
