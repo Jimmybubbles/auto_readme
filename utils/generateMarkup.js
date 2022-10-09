@@ -20,74 +20,76 @@
 
 
 const fs = require('fs');
-const { type } = require('os');
-
-function generateLicenseBadge() {
 
 
-    // choices: ['mit', 'cc', 'apache', 'none'],
+function generateLicenseBadge(type) {
+
     let color;
-    if (type === 'MIT') color = 'green';
-    if (type === 'CC') color = 'blue';
-    if (type === 'Apache') color = 'red';
-    if (type === 'None') color = 'orange';
-
+    // choices: ['mit', 'cc', 'apache', 'none'],
+    // let color;
+    if (type === "MIT") color = "brightgreen";
+    if (type === "CC") color = 'brightgreen';
+    if (type === "Apache") color = "orange";
+    if (type === "NONE") color = "red";
+    
     return (
         `
-
 ## Licences
 
-   <img scr="https://img.shields.io/badge/license${type}-<${color}">
-    
+  <img src="https://img.shields.io/badge/license-${type}-${color}"/>
    `
     );
 };
 
 const generateMarkdown = ({
-    title,
-    description,
-    installation,
-    useProject,
-    licenses,
-    contribute,
-    test,
-    github,
-    email,
+    Title,
+    Description,
+    Installation,
+    UseProject,
+    Licenses,
+    Contribute,
+    Test,
+    Github,
+    Email,
 
 }) => {
 
 
     // template for the readme to populate to 
     const template = (
-        `
-
-# ${title}
+`# ${Title}
 
 ## Description
-${description}
+${Description}
 
 ## Table of contents
+1. [Installation](#Installation)
+2. [UseCase](#UseCase)
+3. [Contribution](#Contribution)
+4. [Test](#Test)
+5. [Github](#Github)
+6. [Email](#Email)
 
 
 ## Installation
-${installation}
+${Installation}
 
 ## Usage
-${useProject}
+${UseProject}
 
 ## Contribution
-${contribute}
+${Contribute}
 
 ## Test
-${test}
+${Test}
 
 ## Github
-${github}
+${Github}
 
 ## Email
-${email}
+${Email}
 
-${generateLicenseBadge(licenses)}
+${generateLicenseBadge(Licenses)}
 
 `
     );

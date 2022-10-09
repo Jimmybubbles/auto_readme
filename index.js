@@ -1,19 +1,17 @@
 const inquirer = require('inquirer');
-const utils = require('./utils/generateMarkup');
+const generateMarkdown = require('./utils/generateMarkup');
+
 
 // create array of questions
-
-
-
 
 const questions = ([
 
     {
-     // Section user to input a project title
+        // Section user to input a project title
 
         type: 'input',
         message: 'What is the title of your project?',
-        name: 'title',
+        name: 'Title',
         // validation 
         validate: titleInput => {
             if (titleInput) {
@@ -24,13 +22,13 @@ const questions = ([
             }
         }
     },
-   
+
     // Section user to input a project description
 
     {
         type: 'input',
         message: 'write a description about the project',
-        name: 'description',
+        name: 'Description',
 
         validate: descriptionInput => {
             if (descriptionInput) {
@@ -48,7 +46,7 @@ const questions = ([
     {
         type: 'Input',
         message: 'input the project installation information',
-        name: 'installation',
+        name: 'Installation',
 
         validate: installationInput => {
             if (installationInput) {
@@ -66,7 +64,7 @@ const questions = ([
     {
         type: 'Input',
         message: 'explain how to use the project',
-        name: 'useProject',
+        name: 'UseProject',
 
         validate: useProjectInput => {
             if (useProjectInput) {
@@ -77,18 +75,18 @@ const questions = ([
             }
         }
     },
-    
+
     // section user to choose licenses
     {
-        type:'input',
+        type: 'rawlist',
         message: 'input the licenses to use in the project',
-        name: 'licenses',
-        choices: ['mit', 'cc', 'apache', 'none'],
+        name: 'Licenses',
+        choices: ['MIT', 'CC', 'Apache', 'NONE'],
 
         validate: licensesInput => {
-            if(licensesInput){
+            if (licensesInput) {
                 return true
-            }else{
+            } else {
                 console.log('please choose a license')
                 return false
             }
@@ -102,7 +100,7 @@ const questions = ([
     {
         type: 'Input',
         message: 'input section for how people can contribute to the project',
-        name: 'contribute',
+        name: 'Contribute',
 
         validate: contributeInput => {
             if (contributeInput) {
@@ -121,7 +119,7 @@ const questions = ([
     {
         type: 'Input',
         message: 'input section for how people can test the project',
-        name: 'test',
+        name: 'Test',
 
         validate: testInput => {
             if (testInput) {
@@ -138,7 +136,7 @@ const questions = ([
     {
         type: 'Input',
         message: 'input github user name',
-        name: 'github',
+        name: 'Github',
 
         validate: githubInput => {
             if (githubInput) {
@@ -150,8 +148,8 @@ const questions = ([
     },
 
     {
-        type: 'Input',
-        message: 'enter your email ',
+        type: 'Email',
+        message: 'Enter your email',
         name: 'Email',
 
         validate: emailInput => {
@@ -168,15 +166,16 @@ const questions = ([
 
 inquirer.prompt(questions).then((answers) => {
     console.log(answers);
+    generateMarkdown(answers)
 });
 
 
 // write to a markdown file
-function writeToFile(readme, data) {
+function writeToFile(fileName, data) {
 
 }
 
-function init(){
+function init() {
 
 }
 
