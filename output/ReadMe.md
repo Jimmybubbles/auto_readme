@@ -1,7 +1,7 @@
-# a
+# Test Readme
 
 ## Description
-a
+use node to produce a readme
 
 ## Table of contents
 1. [Installation](#Installation)
@@ -13,22 +13,22 @@ a
 
 
 ## Installation
-a
+make a package.json file for dependancies and then import inquirer for the command line input
 
 ## Usage
-a
+fill in the prompts in the commandline
 
 ## Contribution
-a
+n/a
 
 ## Test
-a
+n/a
 
 ## Github
-a
+jimmybubbles test
 
 ## Email
-adnksa@nglan.com
+james@gmail.com
 
 
 ## Licences

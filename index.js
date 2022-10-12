@@ -170,10 +170,10 @@ inquirer.prompt(questions).then((answers) => {
 });
 
 
-// write to a markdown file
-function writeToFile(fileName, data) {
+// // write to a markdown file
+// function writeToFile(fileName, data) {
 
-}
+// }
 
 function init() {
 
